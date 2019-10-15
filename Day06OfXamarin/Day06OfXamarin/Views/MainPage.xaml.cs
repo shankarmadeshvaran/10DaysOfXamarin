@@ -4,19 +4,22 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
-using Day04OfXamarin.Models;
+using Day06OfXamarin.Models;
 using SQLite;
+using Xamarin.Forms;
 
-namespace Day04OfXamarin
+namespace Day06OfXamarin
 {
+   
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
         public MainPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
+
         private void CheckIfSaveButtonEnable()
         {
             saveButton.IsEnabled = false;
@@ -48,20 +51,21 @@ namespace Day04OfXamarin
             {
                 titleEntry.Text = string.Empty;
                 experienceEditor.Text = string.Empty;
-                ShowAlert(title: "Success", message: "Your Experience is inserted successfully");
+                //ShowAlert(title: "Success", message: "Your Experience is inserted successfully");
+                Navigation.PopAsync();
             }
             else
             {
                 ShowAlert(title: "Error", message: "There was an error inserting the Experience, please try again");
             }
         }
-        void ShowAlert(string title, string message)
+        private void ShowAlert(string title, string message)
         {
-            DisplayAlert(title, message, "OK");
+            DisplayAlert(title, message, null, "OK");
         }
         void Cancel_Button_Clicked(object sender, System.EventArgs e)
         {
-
+            Navigation.PopAsync();
         }
         void Experience_Editor_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
         {
@@ -71,5 +75,6 @@ namespace Day04OfXamarin
         {
             CheckIfSaveButtonEnable();
         }
+
     }
 }

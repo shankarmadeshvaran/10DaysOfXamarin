@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Day06OfXamarin.MainPage">
+     <StackLayout Margin="20">
+            <Entry x:Name="titleEntry"
+               TextChanged="Title_Entry_TextChanged"
+               Style="{StaticResource mainEntryStyle}"
+               Placeholder="Title" />
+
+            <Editor x:Name="experienceEditor" Placeholder="Write about your experience.."
+                TextChanged="Experience_Editor_TextChanged"
+                Style="{StaticResource mainEditorStyle}"
+                VerticalOptions="FillAndExpand"/>
+      
+            <Button x:Name="saveButton"
+                Text="Save"
+                IsEnabled="false"
+                Clicked="Save_Button_Clicked"
+                Style="{StaticResource saveButtonStyle}"/>
+
+            <Button x:Name="cancelButton" Text="Cancel"
+                IsEnabled="True"
+                Clicked="Cancel_Button_Clicked"
+                Style="{StaticResource cancelButtonStyle}"/>
+    </StackLayout>
+</ContentPage>
