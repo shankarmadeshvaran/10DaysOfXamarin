@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Day07OfXamarin.MainPage">
+    <StackLayout Margin="16,20">
+        <Entry x:Name="titleEntry"
+               TextChanged="Title_Entry_TextChanged"
+               Style="{StaticResource mainEntryStyle}"
+               Placeholder="Title of the experience"/>
+        
+        <Entry x:Name="searchEntry"
+               Style="{StaticResource mainEntryStyle}"
+               Placeholder="Search a nearby venue..."
+               TextChanged="SearchEntry_TextChanged"/>
+        <ListView x:Name="venuesListView"
+                  ItemSelected="Handle_ItemSelected"
+                  HeightRequest="20"
+                  Margin="-16,0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding name}"
+                              Detail="{Binding location.distance, StringFormat='{0} meters away'}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout x:Name="selectedVenueStackLayout"
+                     IsVisible="false">
+            <Label x:Name="venueNameLabel"
+                   Style="{StaticResource titleLabelStyle}"/>
+            <Label x:Name="venueCategoryLabel"
+                   Style="{StaticResource subtitleLabelStyle}"/>
+            <Label x:Name="venueCoordinatesLabel"
+                   Style="{StaticResource detailLabelStyle}"/>
+        </StackLayout>
+        
+        <Editor x:Name="experienceEditor"
+                TextChanged="Experience_Editor_TextChanged"
+                Style="{StaticResource mainEditorStyle}"
+                VerticalOptions="FillAndExpand"
+                Placeholder="Write your experience..."/>
+        <Button x:Name="saveButton"
+                Text="Save"
+                IsEnabled="false"
+                Clicked="Save_Button_Clicked"
+                Style="{StaticResource mainButtonStyle}"/>
+        <Button Text="Cancel"
+                Clicked="Cancel_Button_Clicked"
+                Style="{StaticResource cancelButtonStyle}"/>
+    </StackLayout>
+</ContentPage>
