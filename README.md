@@ -59,7 +59,7 @@ If you came to know any issues in the sample project that I have shared fell fre
 [Twitter](https://twitter.com/Shankar__am). I'll responds to the queries as I came across. 
 
 ## More Updates
-I'll constanly implement lot more features whenever something popup in my mind.Follow me on [Twitter](https://twitter.com/Shankar__am) or [LinkedIn](https://www.linkedin.com/in/shankar-mathesh) to get the latest update about features, code and more. Consider star the repo if you like it. 
+I'll constanly implement lot more features whenever something popup in my mind.Follow me on [Twitter](https://twitter.com/devinmaking) or [LinkedIn](https://www.linkedin.com/in/shankar-mathesh) to get the latest update about features, code and more. Consider star the repo if you like it. 
 
 ## References
 - [Introduction to Xamarin Forms](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/)
